@@ -1,40 +1,140 @@
-<h1>💌 J’ai une petite proposition pour toi...</h1>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Petit arrangement 🎂</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #fff4f7;
+      padding: 40px 20px;
+    }
+
+    .card {
+      background: white;
+      max-width: 500px;
+      margin: auto;
+      padding: 35px;
+      border-radius: 20px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+    }
+
+    h1 {
+      color: #d94f7d;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    button {
+      padding: 12px 20px;
+      margin: 10px;
+      border: none;
+      border-radius: 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    #yesButton {
+      background-color: #d94f7d;
+      color: white;
+    }
+
+    #noButton {
+      background-color: #eeeeee;
+    }
+
+    /* IMPORTANT: this hides the surprise at first */
+    #answer {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="card">
+
+    <!-- FIRST SCREEN -->
+    <div id="proposal">
+
+      <h1>💌 J’ai une petite proposition pour toi...</h1>
+
+      <p>
+        Je te dis exactement ce que je veux pour mon anniversaire,
+        et quand ton anniversaire arrivera,
+        tu pourras faire la même chose avec moi. 😌💕
+      </p>
+
+      <p>
+        Alors... est-ce que tu acceptes notre petit arrangement ? 😂🤝🏽
+      </p>
+
+      <button id="yesButton" onclick="acceptDeal()">
+        OUI, J’ACCEPTE 💕
+      </button>
+
+      <button id="noButton" onclick="moveButton()">
+        Non 🤨
+      </button>
+
+    </div>
 
 
-<p>
-  Je te dis exactement ce que je veux pour mon anniversaire,
-  et quand ton anniversaire arrivera, tu pourras faire la même chose avec moi. 😌💕
-</p>
+    <!-- SECOND SCREEN -->
+    <div id="answer">
 
-<p>
-  Alors... est-ce que tu acceptes notre petit arrangement ? 😂🤝🏽
-</p>
-<button id="yesButton" onclick="acceptDeal()">
-  OUI, J’ACCEPTE 💕
-</button>
+      <h1>🎉 MARCHÉ CONCLU ! 🎉</h1>
 
-<button id="noButton" onmouseover="moveButton()" onclick="moveButton()">
-  Non 🤨
-</button>
-<h1>🎉 MARCHÉ CONCLU ! 🎉</h1>
+      <p style="font-size: 60px;">🎂</p>
 
-<div class="cake">🎂</div>
+      <p>
+        Bon... puisque tu as accepté 😌
+      </p>
 
-<p>
-  Bon... puisque tu as accepté 😌
-</p>
+      <p>
+        Pour mon anniversaire, j’aimerais avoir
+        <strong>un beau gâteau d’anniversaire 🎂💕</strong>.
+      </p>
 
-<p>
-  Pour mon anniversaire, j’aimerais avoir
-  <strong>un beau gâteau d’anniversaire cake bake 🎂💕</strong>.
-</p>
+      <p>
+        Et quand ton anniversaire arrivera,
+        ce sera à ton tour de me dire exactement ce que tu veux.
+      </p>
 
-<p>
-  Et quand ton anniversaire arrivera,
-  ce sera à ton tour de me dire exactement ce que tu veux.
-</p>
+      <p>
+        Trop tard pour reculer maintenant...
+        l’accord est officiellement signé. 😂🤝🏽💕
+      </p>
 
-<p class="deal">
-  Trop tard pour reculer maintenant...
-  l’accord est officiellement signé. 😂🤝🏽💕
-</p>
+    </div>
+
+  </div>
+
+
+  <script>
+
+    function acceptDeal() {
+      document.getElementById("proposal").style.display = "none";
+      document.getElementById("answer").style.display = "block";
+    }
+
+    function moveButton() {
+      const button = document.getElementById("noButton");
+
+      const x = Math.random() * 200 - 100;
+      const y = Math.random() * 100 - 50;
+
+      button.style.transform = `translate(${x}px, ${y}px)`;
+    }
+
+  </script>
+
+</body>
+</html>
